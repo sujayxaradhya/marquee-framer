@@ -41,3 +41,7 @@ This project is built by Sujay Shukla, who is a Computer Science Engineer with a
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the terms of the [MIT](/LICENSE)
