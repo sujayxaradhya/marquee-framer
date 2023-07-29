@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useContext, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 const Marquee: React.FC = () => {
+	const { darkMode } = useContext(ThemeContext);
+	const [textWidth, setTextWidth] = useState<number>(0);
 	const text = `CREEATIVEE DEEVEELOPEER ✦ FFOLLOW MEE! ✦`;
 	const repeatTimes = 50;
 	const repeatedText = Array(repeatTimes).fill(text).join(" ");
 
 	const textRef = useRef<HTMLDivElement | null>(null);
-	const [textWidth, setTextWidth] = useState<number>(0);
 
 	useEffect(() => {
 		if (textRef.current) {
@@ -32,7 +34,9 @@ const Marquee: React.FC = () => {
 	return (
 		<div className="overflow-hidden whitespace-nowrap w-full flex">
 			<motion.div
-				className="text-[#ffffff] inline-block text-[2rem]"
+				className={`${
+					darkMode ? "text-[#ffffff]" : "text-[#111111]"
+				} inline-block text-[2rem]`}
 				variants={tickerVariants}
 				initial="animate"
 				animate="animate"
@@ -41,7 +45,9 @@ const Marquee: React.FC = () => {
 				{repeatedText}
 			</motion.div>
 			<motion.div
-				className="text-[#ffffff] inline-block text-[2rem]"
+				className={`${
+					darkMode ? "text-[#ffffff]" : "text-[#111111]"
+				} inline-block text-[2rem]`}
 				variants={tickerVariants}
 				initial="animate"
 				animate="animate"
