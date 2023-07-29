@@ -21,8 +21,8 @@ const DarkMode: React.FC = () => {
 		>
 			<Image
 				className="mb-[1rem]"
-				width={37}
-				height={37}
+				width={41}
+				height={41}
 				src={darkMode ? night : circum_sun}
 				alt={darkMode ? "night" : "light"}
 			/>

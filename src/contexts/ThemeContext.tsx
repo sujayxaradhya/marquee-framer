@@ -15,26 +15,35 @@ type ThemeProviderProps = {
 	children: ReactNode;
 };
 
+const THEME_KEY = "theme";
+const DARK_THEME = "dark";
+const LIGHT_THEME = "light";
+const PREFERS_DARK = "(prefers-color-scheme: dark)";
+
+const applyTheme = (theme: string) => {
+	window.localStorage.setItem(THEME_KEY, theme);
+	if (theme === DARK_THEME) {
+		document.documentElement.classList.add(DARK_THEME);
+	} else {
+		document.documentElement.classList.remove(DARK_THEME);
+	}
+};
+
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
-		const theme = window.localStorage.getItem("theme");
+		const theme = window.localStorage.getItem(THEME_KEY);
 		if (theme) {
-			setDarkMode(theme === "dark");
-		} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			setDarkMode(theme === DARK_THEME);
+		} else if (window.matchMedia(PREFERS_DARK).matches) {
 			setDarkMode(true);
 		}
 	}, []);
 
 	useEffect(() => {
-		if (darkMode) {
-			window.localStorage.setItem("theme", "dark");
-			document.documentElement.classList.add("dark");
-		} else {
-			window.localStorage.setItem("theme", "light");
-			document.documentElement.classList.remove("dark");
-		}
+		const theme = darkMode ? DARK_THEME : LIGHT_THEME;
+		applyTheme(theme);
 	}, [darkMode]);
 
 	return (
