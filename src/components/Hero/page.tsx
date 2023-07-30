@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
 				</div>
 			</div>
 
-			<div className="flex items-center flex-col text-center text-[2rem] tracking-wide leading-[2.2rem] max-[480px]:text-[1.5rem]">
+			<div className="flex items-center flex-col text-center text-[2rem] tracking-wide leading-[2.2rem] max-[480px]:text-[1.5rem] max-[480px]:mb-[2rem]">
 				<div
 					className={`pt-[2rem] pb-[2rem] ${
 						darkMode ? "text-[#111111]" : "text-[#ffffff]"
@@ -53,14 +53,14 @@ const Hero: React.FC = () => {
 				<div
 					className={`w-[200vw] p-[1rem] m-2 absolute left-[-25%] bottom-[36%] ${
 						darkMode ? "bg-[#111111]" : "bg-[#ffffff]"
-					} rotate-[9deg] translate-y-[22rem] z-[2] max-[820px]:bottom-[25rem] max-[820px]:p-[0] max-[820px]:left-[-20rem] max-[480px]:bottom-[23rem] max-[480px]:p-[0] max-[480px]:rotate-[10deg] max-[300px]:left-[-15rem] max-[300px]:p-[0]`}
+					} rotate-[9deg] translate-y-[22rem] z-[2] max-[820px]:bottom-[25rem] max-[820px]:p-[0] max-[820px]:left-[-20rem] max-[480px]:bottom-[25rem] max-[480px]:p-[0] max-[480px]:rotate-[10deg] max-[300px]:left-[-15rem] max-[300px]:p-[0]`}
 				>
 					<Marquee />
 				</div>
 				<div
 					className={`w-[200vw] p-[1rem] m-2 absolute left-[-95%] bottom-[30%] ${
 						darkMode ? "bg-[#111111]" : "bg-[#ffffff]"
-					} rotate-[-9deg] translate-y-[22rem] z-[1] max-[820px]:bottom-[25rem] max-[820px]:p-[0] max-[820px]:left-[-30rem] max-[480px]:bottom-[30rem] max-[480px]:p-[0] max-[480px]:left-[-7rem] max-[480px]:rotate-[-11deg] max-[300px]:bottom-[28rem] max-[300px]:p-[0]`}
+					} rotate-[-9deg] translate-y-[22rem] z-[1] max-[820px]:bottom-[25rem] max-[820px]:p-[0] max-[820px]:left-[-30rem] max-[480px]:bottom-[31rem] max-[480px]:p-[0] max-[480px]:left-[-7rem] max-[480px]:rotate-[-11deg] max-[300px]:bottom-[28rem] max-[300px]:p-[0]`}
 				>
 					<Marquee />
 				</div>
